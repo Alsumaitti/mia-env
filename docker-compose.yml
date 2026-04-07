@@ -1,0 +1,30 @@
+# docker-compose.yml
+# Starts a single service that runs the JupyterLab environment
+# defined in the Dockerfile, with the project directory mounted
+# so code and data persist on the host.
+
+services:
+  mia:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mia-env:latest
+    container_name: mia-env
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./scripts:/workspace/scripts
+      - ./notebooks:/workspace/notebooks
+      - ./data:/workspace/data
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Uncomment the following block if the host has an NVIDIA GPU
+    # and the NVIDIA Container Toolkit is installed.
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+    restart: unless-stopped
