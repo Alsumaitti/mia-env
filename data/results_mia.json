@@ -1,0 +1,43 @@
+{
+  "config": {
+    "data": "data",
+    "out": "data/results_mia.json",
+    "num_shadows": 4,
+    "train_size": 2500,
+    "epochs": 15,
+    "batch_size": 128,
+    "lr": 0.001,
+    "attack_epochs": 30,
+    "seed": 42
+  },
+  "wall_seconds": 201.0,
+  "target": {
+    "train_acc": 0.9268,
+    "test_acc": 0.4992,
+    "generalization_gap": 0.4276
+  },
+  "shadows": [
+    {
+      "train_acc": 0.9376,
+      "test_acc": 0.482
+    },
+    {
+      "train_acc": 0.9512,
+      "test_acc": 0.5224
+    },
+    {
+      "train_acc": 0.9308,
+      "test_acc": 0.5052
+    },
+    {
+      "train_acc": 0.9332,
+      "test_acc": 0.5012
+    }
+  ],
+  "attack": {
+    "accuracy": 0.712,
+    "auc": 0.76857232,
+    "tpr_at_fpr_1pct": 0.058,
+    "tpr_at_fpr_0.1pct": 0.0052
+  }
+}
