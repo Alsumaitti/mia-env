@@ -177,7 +177,7 @@ comparison with published results.
 - The `data/` directory is host-mounted so CIFAR-10 downloads persist
   across container rebuilds.
 
-## Project Status
+## Project(Independent Study) Status
 
 | Phase | Status |
 |-------|--------|
