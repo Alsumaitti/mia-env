@@ -20,10 +20,10 @@ mia-env/
 │   ├── train_cifar10.py        # Standalone CIFAR-10 target model training
 │   ├── run_mia.py              # Full MIA pipeline — Shokri 2017 reproduction
 │   └── run_experiments.py      # Preliminary experiment suite (6 configs)
-├── notebooks/                  # Mounted into the container for JupyterLab
 ├── data/
 │   ├── results_mia.json        # Baseline experiment results
 │   ├── experiment_results.json # Preliminary experiment results (6 configs)
+│   ├── mia_run.log             # Baseline execution log (proof of run)
 │   └── cifar-10-batches-py/    # Downloaded CIFAR-10 dataset
 └── docs/
     └── literature_review.md    # Verified 14-paper literature review (~4,700 words)
@@ -153,6 +153,20 @@ pages. Topics covered:
 - Defenses: DP-SGD (Abadi 2016), MemGuard (Jia 2019), Adversarial Reg. (Nasr 2018)
 - LLM-era extensions (Carlini 2021, Mattern 2023)
 
+## Dataset
+
+**CIFAR-10** (Canadian Institute for Advanced Research, 10 classes)
+- Source: https://www.cs.toronto.edu/~kriz/cifar.html
+- 60,000 color images (32x32), 10 classes, 50,000 train / 10,000 test
+- Auto-downloaded by `torchvision.datasets.CIFAR10` on first run
+- License: Released by Alex Krizhevsky for research use
+- Citation: Krizhevsky, A. (2009). *Learning Multiple Layers of Features
+  from Tiny Images.* Technical report, University of Toronto.
+
+This dataset was chosen because it is the standard benchmark used in
+Shokri et al. (2017) and subsequent MIA literature, enabling direct
+comparison with published results.
+
 ## Notes on Reproducibility
 
 - Base image tag (`pytorch/pytorch:2.2.0-cuda11.8-cudnn8-runtime`) is
@@ -179,6 +193,34 @@ pages. Topics covered:
 **Osamah Alsumaitti**
 M.Sc. in Cybersecurity, Hamad Bin Khalifa University (HBKU)
 osal89659@hbku.edu.qa
+
+## Tools and Acknowledgments
+
+| Tool | Version | Purpose |
+|------|---------|---------|
+| PyTorch | 2.2.0 | Model training (target + shadow + attack) |
+| torchvision | >= 0.17 | CIFAR-10 dataset loading and transforms |
+| scikit-learn | >= 1.3 | ROC AUC, ROC curve, TPR@FPR computation |
+| NumPy | >= 1.24 | Array operations, random partitioning |
+| matplotlib | >= 3.7 | Plotting (available but not used in scripts) |
+| Docker | 24+ | Reproducible containerized environment |
+| Opacus | >= 1.4 | Differential privacy (installed, not yet used) |
+| ML Privacy Meter | >= 2.0 | MIA toolkit (installed, not yet used) |
+
+**Note:** Opacus and ML Privacy Meter are included in `requirements.txt`
+for the thesis phase. They were not used in the current experiments —
+all MIA code was written from scratch following the Shokri et al. (2017)
+paper to ensure full understanding of the pipeline.
+
+## Disclosure
+
+This project was completed as part of an Independent Study course. AI
+tools (ChatGPT and Claude) were used for grammar checking, writing
+enhancement, and source retrieval in the literature review. All code was
+written and tested by the author. All 14 literature citations were
+independently verified against their arXiv or publisher abstract pages.
+Experimental results were produced by running the scripts in this
+repository on a local machine (CPU only, seed 42).
 
 ## License
 

@@ -323,8 +323,8 @@ def main():
          "train_size": 2500, "num_shadows": 4, "epochs": 15,
          "weight_decay": 1e-3, "seed": 42},
 
-        # Exp 5: Combined — larger data + more shadows + regularization
-        {"exp_id": 5, "name": "Combined (5k + 8 shadows + wd)",
+        # Exp 5: Combined — more shadows + regularization
+        {"exp_id": 5, "name": "Combined (8 shadows + wd=1e-4)",
          "train_size": 2500, "num_shadows": 8, "epochs": 15,
          "weight_decay": 1e-4, "seed": 42},
     ]
