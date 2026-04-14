@@ -74,10 +74,10 @@ after building the image.
 1. **Week 5–6 (current):** environment build + smoke test. ✅
 2. **Week 7–9:** reproduce the baseline shadow-model attack of Shokri et
    al. (2017) using ML Privacy Meter on the saved CIFAR-10 target model.
-3. **Week 10–11:** small preliminary experiment varying training set size
+3. **Week 10–13:** small preliminary experiment varying training set size
    and regularization strength, and comparing attack success rate (AUC and
    TPR at low FPR, following Carlini et al., 2022) against the baseline.
-4. **Week 12:** write the final short report.
+4. **Week 14:** write the final short report.
 
 ## License
 
