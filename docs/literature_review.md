@@ -219,4 +219,4 @@ Yeom, S., Giacomelli, I., Fredrikson, M., & Jha, S. (2018). Privacy risk in mach
 
 ## 8. Disclosure
 
-This literature review was prepared with AI-assisted research tools for source retrieval and drafting; all citations were verified against publicly available abstracts before inclusion.
+This literature review was prepared with assistance with Ai gammer check and enhance writing also for source retrieval; all citations were verified against publicly available abstracts before inclusion.
