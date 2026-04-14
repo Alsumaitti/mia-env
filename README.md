@@ -224,4 +224,4 @@ repository on a local machine (CPU only, seed 42).
 
 ## License
 
-Research code for an Independent Study course. Not for production use.
+Research code for an Independent Study course.  Not for production use.
