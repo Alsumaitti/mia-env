@@ -1,0 +1,168 @@
+{
+  "total_wall_seconds": 1463.2,
+  "num_experiments": 6,
+  "experiments": [
+    {
+      "exp_id": 0,
+      "name": "Baseline (original)",
+      "config": {
+        "train_size": 2500,
+        "num_shadows": 4,
+        "epochs": 15,
+        "weight_decay": 0.0,
+        "seed": 42
+      },
+      "wall_seconds": 162.6,
+      "target": {
+        "train_acc": 0.9268,
+        "test_acc": 0.4992,
+        "gen_gap": 0.4276
+      },
+      "shadow_avg": {
+        "train_acc": 0.9382,
+        "test_acc": 0.5027
+      },
+      "attack": {
+        "accuracy": 0.712,
+        "auc": 0.7686,
+        "tpr_at_fpr_1pct": 0.058,
+        "tpr_at_fpr_0.1pct": 0.0052
+      }
+    },
+    {
+      "exp_id": 1,
+      "name": "Larger train set (5k)",
+      "config": {
+        "train_size": 5000,
+        "num_shadows": 4,
+        "epochs": 15,
+        "weight_decay": 0.0,
+        "seed": 42
+      },
+      "wall_seconds": 335.5,
+      "target": {
+        "train_acc": 0.9046,
+        "test_acc": 0.53,
+        "gen_gap": 0.3746
+      },
+      "shadow_avg": {
+        "train_acc": 0.941,
+        "test_acc": 0.5573
+      },
+      "attack": {
+        "accuracy": 0.6896,
+        "auc": 0.7404,
+        "tpr_at_fpr_1pct": 0.035,
+        "tpr_at_fpr_0.1pct": 0.0088
+      }
+    },
+    {
+      "exp_id": 2,
+      "name": "More shadows (8)",
+      "config": {
+        "train_size": 2500,
+        "num_shadows": 8,
+        "epochs": 15,
+        "weight_decay": 0.0,
+        "seed": 42
+      },
+      "wall_seconds": 323.5,
+      "target": {
+        "train_acc": 0.9268,
+        "test_acc": 0.4992,
+        "gen_gap": 0.4276
+      },
+      "shadow_avg": {
+        "train_acc": 0.9304,
+        "test_acc": 0.5012
+      },
+      "attack": {
+        "accuracy": 0.7162,
+        "auc": 0.7795,
+        "tpr_at_fpr_1pct": 0.0424,
+        "tpr_at_fpr_0.1pct": 0.0056
+      }
+    },
+    {
+      "exp_id": 3,
+      "name": "With regularization (wd=1e-4)",
+      "config": {
+        "train_size": 2500,
+        "num_shadows": 4,
+        "epochs": 15,
+        "weight_decay": 0.0001,
+        "seed": 42
+      },
+      "wall_seconds": 164.9,
+      "target": {
+        "train_acc": 0.9252,
+        "test_acc": 0.5012,
+        "gen_gap": 0.424
+      },
+      "shadow_avg": {
+        "train_acc": 0.924,
+        "test_acc": 0.4988
+      },
+      "attack": {
+        "accuracy": 0.7118,
+        "auc": 0.7679,
+        "tpr_at_fpr_1pct": 0.0488,
+        "tpr_at_fpr_0.1pct": 0.0092
+      }
+    },
+    {
+      "exp_id": 4,
+      "name": "Stronger regularization (wd=1e-3)",
+      "config": {
+        "train_size": 2500,
+        "num_shadows": 4,
+        "epochs": 15,
+        "weight_decay": 0.001,
+        "seed": 42
+      },
+      "wall_seconds": 183.0,
+      "target": {
+        "train_acc": 0.896,
+        "test_acc": 0.4896,
+        "gen_gap": 0.4064
+      },
+      "shadow_avg": {
+        "train_acc": 0.907,
+        "test_acc": 0.4906
+      },
+      "attack": {
+        "accuracy": 0.6986,
+        "auc": 0.7547,
+        "tpr_at_fpr_1pct": 0.0612,
+        "tpr_at_fpr_0.1pct": 0.008
+      }
+    },
+    {
+      "exp_id": 5,
+      "name": "Combined (5k + 8 shadows + wd)",
+      "config": {
+        "train_size": 2500,
+        "num_shadows": 8,
+        "epochs": 15,
+        "weight_decay": 0.0001,
+        "seed": 42
+      },
+      "wall_seconds": 293.6,
+      "target": {
+        "train_acc": 0.9252,
+        "test_acc": 0.5012,
+        "gen_gap": 0.424
+      },
+      "shadow_avg": {
+        "train_acc": 0.924,
+        "test_acc": 0.5027
+      },
+      "attack": {
+        "accuracy": 0.7148,
+        "auc": 0.7778,
+        "tpr_at_fpr_1pct": 0.04,
+        "tpr_at_fpr_0.1pct": 0.004
+      }
+    }
+  ]
+}
